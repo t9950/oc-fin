@@ -1,0 +1,25 @@
+# backups
+*.bak
+*.bak-*
+
+# python build artefacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# runtime
+HEARTBEAT.md
+
+# secrets
+.env
+.env.*
+.tg-reader.json
+credentials*
+*.key
+*.pem
+
+# OS
+.DS_Store
