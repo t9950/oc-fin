@@ -151,3 +151,14 @@
 - Do not promise work without a concrete action, scheduled follow-up, or explicit blocker.
 - If a later follow-up is promised, create it through native scheduling/taskflow in the same turn, or say scheduling is unavailable.
 - For system changes: draft -> confirmation when required -> apply -> report exact result.
+
+## Workspace на GitHub
+
+Этот workspace хранится в приватном репо `github.com/t9950/oc-fin` (SSH-remote).
+
+После осмысленных правок файлов в workspace:
+- предложить пользователю коммит со внятным сообщением (что и зачем поменялось)
+- `git commit` — после согласования сообщения
+- `git push` — только с явного ОК пользователя, не пушить молча
+- не накапливать кучу мелких коммитов: фиксировать осмысленные единицы изменений
+- если правка экспериментальная и не идёт в репо — не предлагать коммит вовсе
