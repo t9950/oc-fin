@@ -70,6 +70,7 @@
 - `skills/syle-order-to-cash/SKILL.md` — продажи, отгрузки, клиентские оплаты, закрытие заказов;
 - `skills/syle-procure-to-pay/SKILL.md` — закупки, приемки, сырье, обязательства поставщикам, исходящие оплаты;
 - `skills/syle-formula-change-control/SKILL.md` — каноническая рецептура и премикс в Google Sheets, версии, change control и выпуск новой формулы в операционный контур Notion без переписывания истории;
+- `skills/syle-formula-to-tech-card/SKILL.md` — перенос минимально нужного операционного слоя из канонической рецептуры/премикса в Sheets в техкарту Notion: упаковка, batch trace, deterministic consumption и cost flow без дублирования всей рецептуры;
 - `skills/syle-raw-to-finished/SKILL.md` — выпуск партии, движение `сырье -> готовая продукция`, управленческая фиксация производственного события;
 - `skills/syle-bulk-pack-and-availability/SKILL.md` — нефасованная vs фасованная готовая продукция, отдельный контур тары/упаковки, availability и reorder по правилу `формулы/скрипты сначала, AI только для exception review`;
 - `skills/syle-reorder-and-availability-control/SKILL.md` — formulas-first контроль минимальных остатков, перезаказа, availability на выпуск/заказ и исключений, где AI только читает сигналы, а не считает математику;
