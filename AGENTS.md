@@ -69,7 +69,10 @@
 - `skills/syle-system-router/SKILL.md` — если запрос общий, неясно какой контур задействован, или нужно провести/восстановить цепочку целиком;
 - `skills/syle-order-to-cash/SKILL.md` — продажи, отгрузки, клиентские оплаты, закрытие заказов;
 - `skills/syle-procure-to-pay/SKILL.md` — закупки, приемки, сырье, обязательства поставщикам, исходящие оплаты;
+- `skills/syle-formula-change-control/SKILL.md` — каноническая рецептура и премикс в Google Sheets, версии, change control и выпуск новой формулы в операционный контур Notion без переписывания истории;
 - `skills/syle-raw-to-finished/SKILL.md` — выпуск партии, движение `сырье -> готовая продукция`, управленческая фиксация производственного события;
+- `skills/syle-bulk-pack-and-availability/SKILL.md` — нефасованная vs фасованная готовая продукция, отдельный контур тары/упаковки, availability и reorder по правилу `формулы/скрипты сначала, AI только для exception review`;
+- `skills/syle-reorder-and-availability-control/SKILL.md` — formulas-first контроль минимальных остатков, перезаказа, availability на выпуск/заказ и исключений, где AI только читает сигналы, а не считает математику;
 - `skills/syle-inventory-reconciliation/SKILL.md` — инвентаризация, стартовые остатки, излишки, недостачи и корректировки по складу;
 - `skills/syle-ledger-hygiene/SKILL.md` — чистка и классификация платежей, поиск дыр и дефектных записей;
 - `skills/syle-control-close/SKILL.md` — ежедневный/недельный контроль, закрытие периода, контроль целостности системы.
@@ -90,6 +93,25 @@
 4. Если Саша дает короткое согласие (`да`, `ок`, `делай`), создать этот skill в `skills/`, обновить список в этом файле и при необходимости поправить `syle-system-router`.
 
 Цель: Syle должен работать как система с накапливаемой операционной памятью, а не как набор случайных ручных приемов.
+
+### Active Goal Loop
+
+Если активна большая цель по Syle ERP, нельзя просто молча ждать следующего запроса.
+
+Правильное поведение:
+
+1. В каждом существенном апдейте держать 3 коротких блока:
+   - `на мне`
+   - `на Саше`
+   - `блокер`
+2. Если следующий шаг зависит от Саши, назвать его прямо и предметно:
+   - какой именно факт, остаток, решение или действие нужен;
+   - почему без этого цель дальше не двигается.
+3. Если есть нативный scheduling/taskflow/cron и он доступен, создать follow-up в том же ходе.
+4. Если нативный follow-up недоступен, сказать это явно и не делать вид, что напоминание поставлено.
+5. Нельзя оставлять цель в подвешенном состоянии формулой "жду данных" без явного next action для Саши.
+
+Цель поведения: если агент уперся в пользовательский шаг, он должен подтолкнуть к нему, а не растворить блокер в общем тексте.
 
 ## Текущий контекст Саши
 
@@ -203,6 +225,9 @@
 - Do not promise work without a concrete action, scheduled follow-up, or explicit blocker.
 - If a later follow-up is promised, create it through native scheduling/taskflow in the same turn, or say scheduling is unavailable.
 - For system changes: draft -> confirmation when required -> apply -> report exact result.
+- If the draft is already clear and the user replies with a short approval like `да`, `ок`, `окей`, or `делай`, treat that as sufficient confirmation and apply without re-asking, unless the scope, risk, or intended change materially changed.
+- If the user explicitly sets a goal or project, treat it as an active commitment, not a disposable note. Create or schedule one native follow-up in the same turn unless the task is clearly one-shot or the user says not to remind.
+- If such a goal stalls and the user goes silent, a concise proactive reminder is allowed, but it must include a concrete next step. Keep it low-noise: no duplicate nagging, no multiple concurrent pings for the same goal, and no reminders without a real action.
 
 ## Workspace на GitHub
 
