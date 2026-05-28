@@ -33,6 +33,7 @@ Pick one contour before editing anything:
 - sales and client cash -> `syle-order-to-cash`
 - supplier purchase and raw material intake -> `syle-procure-to-pay`
 - production conversion and batch release -> `syle-raw-to-finished`
+- stock count, opening balances, surplus, shortage, or stock correction -> `syle-inventory-reconciliation`
 - broken, empty, or ambiguous money records -> `syle-ledger-hygiene`
 - weekly review, close, or integrity check -> `syle-control-close`
 
