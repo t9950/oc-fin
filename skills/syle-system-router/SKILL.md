@@ -37,6 +37,15 @@ Pick one contour before editing anything:
 - broken, empty, or ambiguous money records -> `syle-ledger-hygiene`
 - weekly review, close, or integrity check -> `syle-control-close`
 
+## Skill gap rule
+
+If the user asks for a typical Notion operation and no existing Syle skill fits cleanly:
+
+1. Name the gap explicitly.
+2. Distinguish one-off work from recurring workflow.
+3. If recurring, propose creating a shared skill before this turns into repeated ad hoc handling.
+4. After a short user approval, add the new skill, update `AGENTS.md`, and extend this router if needed.
+
 ## Default workflow
 
 1. Identify the real fact that happened.
