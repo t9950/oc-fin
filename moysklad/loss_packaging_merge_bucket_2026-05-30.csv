@@ -1,0 +1,2 @@
+entity_type,code,name,quantity,uom,store_name,source,confidence,note
+product,SY-PACK-BUCKET-1L,"Ведро 1 л",10,шт,"Основной склад","Live packaging cleanup 2026-05-30",derived,"Remove duplicate packaging SKU after merging its stock into the canonical 1 l bucket SKU"
