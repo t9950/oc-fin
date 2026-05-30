@@ -34,8 +34,10 @@ Use this skill for supplier-side and raw-material-side events.
    - outgoing
    - accrual date filled
    - counterparty filled
-   - do not duplicate P&L effect if the payment only settles a separately recognized obligation
+   - if the payment only settles a separately recognized `Приемка` and/or `Обязательство`, set `Статья P&L = не влияет`
+   - only keep P&L meaning on the payment itself when no receipt/obligation layer can be restored yet
 6. Use `Распределения платежей` to connect the payment to `Приемка` and/or `Обязательство`.
+   For supplier-side payments this is the default, not an exception, even for 1:1 links.
 7. Update obligation status after distribution.
 
 ## Historical recovery
@@ -43,6 +45,12 @@ Use this skill for supplier-side and raw-material-side events.
 - If quantity, lot, or SKU detail is missing, do not invent it.
 - In that case, keep `Приемка` as a managerial document with a comment about what could not be restored.
 - Separate true procurement from founder funding, transfers, and personal spending.
+
+## Comment rule
+
+- For `Приемка` and linked supplier-side documents, write comments only in Russian.
+- Keep the text short and factual: what was received, from whom, and why the document exists if it is a reconstruction.
+- Do not leave English boilerplate, migration filler, or generic technical notes in the description.
 
 ## Completion check
 

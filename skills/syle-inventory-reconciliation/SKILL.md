@@ -54,6 +54,9 @@ If the discrepancy is actually caused by an unrecorded purchase, production rele
 - Do not merge several different reasons into one vague adjustment.
 - Separate saleable stock from samples, promo units, damaged stock, and personal withdrawals.
 - If the count is partial, mark it as partial.
+- For `Инвентаризация`, `Оприходование`, and `Списание`, write comments only in Russian.
+- Keep the description short and meaningful: reason, scope, and date or event if needed.
+- Do not leave English boilerplate, migration filler, or vague generic comments.
 
 ## Completion check
 
